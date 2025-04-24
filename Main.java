@@ -41,7 +41,7 @@ public class Main {
     	}
     	
     	if(validEquation) {
-    		System.out.println("Answer: " + result);
+    		System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + result);
     	}
     	
     	scanner.close();
