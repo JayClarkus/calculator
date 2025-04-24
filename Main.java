@@ -8,14 +8,12 @@ public class Main {
     	boolean validEquation = true;
     	double result = 0;
     		
-    	System.out.print("Enter the first number: ");
-    	double firstNumber = scanner.nextDouble();
+    	double firstNumber = doubleValidation(scanner, "Enter the first number: ");
     		
     	System.out.print("Enter an operator (+, -, *, /, ^): ");
     	char operator = scanner.next().charAt(0);
     	
-    	System.out.print("Enter the second number: ");
-    	double secondNumber = scanner.nextDouble();
+    	double secondNumber = doubleValidation(scanner, "Enter the second number: ");
     	
     	switch(operator){
     	
@@ -48,6 +46,31 @@ public class Main {
     	
     	scanner.close();
     
+    }
+    
+    public static double doubleValidation(Scanner scanner, String prompt) {
+    	
+    	double userInput = 0;
+    	boolean valid = false;
+    	
+    	while(!valid) {
+    		
+    		System.out.print(prompt);
+    		if (scanner.hasNextInt()) {
+    			userInput = scanner.nextDouble();
+    			scanner.nextLine();
+    			valid = true;
+    		}
+    		else {
+    			System.out.println("Invalid Input, try again...");
+    			System.out.println();
+    			scanner.next();
+    		}
+    		
+    	}
+    	
+    	return userInput;
+    	
     }
 
 }
