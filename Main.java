@@ -56,7 +56,7 @@ public class Main {
     	while(!valid) {
     		
     		System.out.print(prompt);
-    		if (scanner.hasNextInt()) {
+    		if (scanner.hasNextDouble()) {
     			userInput = scanner.nextDouble();
     			scanner.nextLine();
     			valid = true;
